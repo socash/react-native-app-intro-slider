@@ -211,9 +211,10 @@ const styles = StyleSheet.create({
   },
   bottomButton: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, .3)',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 10,
   },
   buttonText: {
     backgroundColor: 'transparent',
