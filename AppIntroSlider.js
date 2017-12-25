@@ -64,7 +64,7 @@ export default class AppIntroSlider extends React.Component {
     }
     let style = isSkip ? styles.leftButtonContainer : styles.rightButtonContainer;
     if (this.props.bottomButton) {
-      content = <View style={[styles.bottomButton, isSkip && { backgroundColor: 'transparent' }]}>{content}</View>;
+      content = <View style={[styles.bottomButton, isSkip && { backgroundColor: 'white' }]}>{content}</View>;
       style = styles.bottomButtonContainer;
     }
     return (
@@ -100,6 +100,8 @@ export default class AppIntroSlider extends React.Component {
 
     return (
       <View style={styles.paginationContainer}>
+        {this.props.bottomButton && showNextButton && btn}
+        {this.props.bottomButton && skipBtn}
         <View style={styles.paginationDots}>
           {!this.props.bottomButton && skipBtn}
           {this.props.slides.map((_, i) => (
@@ -113,8 +115,6 @@ export default class AppIntroSlider extends React.Component {
           ))}
           {!this.props.bottomButton && btn}
         </View>
-        {this.props.bottomButton && showNextButton && btn}
-        {this.props.bottomButton && skipBtn}
       </View>
     )
   }
