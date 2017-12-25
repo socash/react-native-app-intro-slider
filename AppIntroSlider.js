@@ -96,6 +96,7 @@ export default class AppIntroSlider extends React.Component {
 
     const skipBtn = this.props.showSkipButton && this._renderSkipButton();
     const btn = this.state.activeIndex == (this.props.slides.length - 1 ) ? this._renderDoneButton() : this._renderNextButton();
+    const showNextButton = this.props.slides.length > 2 || this.state.activeIndex > 0;
 
     return (
       <View style={styles.paginationContainer}>
@@ -112,7 +113,7 @@ export default class AppIntroSlider extends React.Component {
           ))}
           {!this.props.bottomButton && btn}
         </View>
-        {this.props.bottomButton && btn}
+        {this.props.bottomButton && showNextButton && btn}
         {this.props.bottomButton && skipBtn}
       </View>
     )
